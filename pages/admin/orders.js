@@ -59,7 +59,7 @@ export default function AdminOrderScreen() {
           </ul>
         </div>
         <div className="overflow-x-auto md:col-span-3">
-          <h1 className="mb-4 text-xl">Admin Orders</h1>
+          <h1 className="mb-4 text-xl">Admin Pedidos</h1>
 
           {loading ? (
             <div>Cargando...</div>
