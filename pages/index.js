@@ -29,18 +29,25 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Inicio">
-      <Carousel showThumbs={false} autoPlay>
-        {featuredProducts.map((product) => (
-          <div key={product._id}>
-            <Link href={`/product/${product.slug}`} passHref>
-              <a className="flex">
-                <img src={product.banner} alt={product.name} />
-              </a>
-            </Link>
+      <div className="z-0">
+        <Carousel showThumbs={false} autoPlay infiniteLoop>
+          <div>
+            <img src="/images/banner1.jpg" />
+            <p className="legend">
+              La Señora Yola inicia actividades en internet
+            </p>
           </div>
-        ))}
-      </Carousel>
-      <h2 className="h2 my-4">Últimos productos</h2>
+          <div>
+            <img src="/images/banner2.jpg" />
+            <p className="legend">La mejor variedad en productos y ofertas</p>
+          </div>
+          <div>
+            <img src="/images/banner3.jpg" />
+            <p className="legend">Don Yolo también lo atiende a usted tambié</p>
+          </div>
+        </Carousel>
+      </div>
+      <h2 className="h2 my-4 text-2xl">Últimos productos</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductItem

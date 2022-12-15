@@ -45,20 +45,20 @@ export default function Layout({ title, children }) {
 
       <ToastContainer position="bottom-center" limit={1} />
 
-      <div className="flex min-h-screen flex-col justify-between ">
-        <header className="bg-[#e0f2fe] opacity-100 fixed w-full text-white px-3 py-2">
+      <div className="flex min-h-screen flex-col justify-between">
+        <header className="bg-[#e0f2fe] w-full text-[#5481f2]" z-30>
           <nav className="flex h-16 items-center px-4 justify-between shadow-md">
             <Link href="/">
-              <a className="text-xl font-medium">almacénYola.cl</a>
+              <a className="text-2xl font-bold">almacénYola.cl</a>
             </Link>
             <form
               onSubmit={submitHandler}
-              className="mx-auto  hidden w-full justify-center md:flex"
+              className="mx-auto justify-center hidden w-full  md:flex"
             >
               <input
                 onChange={(e) => setQuery(e.target.value)}
                 type="text"
-                className="rounded-tr-none rounded-br-none p-1 text-sm   focus:ring-0"
+                className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0"
                 placeholder="Buscar en el almacén"
               />
               <button
@@ -69,9 +69,9 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-5"></SearchIcon>
               </button>
             </form>
-            <div className="inline-block">
+            <div className="relative md:flex">
               <Link href="/cart">
-                <a className="p-2 text-blue-600 hover:bg-[#5481f2] hover:text-white px-3 py-2 rounded-3xl text-xl font-medium">
+                <a className="p-2 text-blue-900 hover:bg-[#5481f2] hover:text-white px-3 py-2 rounded-3xl text-2xl font-medium">
                   Carrito
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
@@ -84,8 +84,8 @@ export default function Layout({ title, children }) {
               {status === 'loading' ? (
                 'Cargando...'
               ) : session?.user ? (
-                <Menu as="div" className="relative">
-                  <Menu.Button className="p-2 text-blue-600 inline-block hover:bg-[#5481f2] hover:text-white px-3 py-2 rounded-3xl text-xl font-medium">
+                <Menu as="div" className="z-30">
+                  <Menu.Button className="p-2 text-blue-900 hover:bg-[#5481f2] hover:text-white px-3 py-2 rounded-3xl text-2xl font-medium">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
@@ -125,7 +125,7 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2 text-gray-300 hover:bg-[#5481f2] hover:text-white px-3 py-2 rounded-3xl text-xl font-medium">
+                  <a className="p-2 text-blue-900 hover:bg-[#5481f2] hover:text-white px-2 py-2 rounded-xl text-2xl font-medium">
                     Iniciar Sesión
                   </a>
                 </Link>
@@ -133,7 +133,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4 mt-20">{children}</main>
+        <main className="container m-auto px-4 mt-10 z-10">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
           <p>Todos los derechos reservados © 2022 almacénYola.cl</p>
         </footer>
