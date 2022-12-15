@@ -169,7 +169,7 @@ function OrderScreen() {
   }
 
   return (
-    <Layout title={`Order ${orderId}`}>
+    <Layout title={`Pedido ${orderId}`}>
       <h1 className="mb-4 text-xl">{`Pedido ${orderId}`}</h1>
       {loading ? (
         <div>Cargando...</div>
