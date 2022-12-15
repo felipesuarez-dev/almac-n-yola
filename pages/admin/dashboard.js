@@ -87,7 +87,7 @@ function AdminDashboardScreen() {
               </Link>
             </li>
             <li>
-              <Link href="/admin/orders">Ordenes</Link>
+              <Link href="/admin/orders">Pedidos</Link>
             </li>
             <li>
               <Link href="/admin/products">Productos</Link>
